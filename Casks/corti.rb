@@ -1,16 +1,17 @@
 cask "corti" do
-  version "0.1.1"
-  sha256 "4672ac6ef64e183b83e8f2359543c0be0a62177119a6c926a04d44edc9233470"
+  version "0.2.0"
+  sha256 "1d836643eca891c38c75c89d05f04ae7507c3d00fadff34577d608478ff9422b"
 
-  url "https://github.com/vasovagal/corti/releases/download/v0.1.1/Corti_0.1.1_aarch64.dmg"
+  url "https://github.com/vasovagal/corti/releases/download/v0.2.0/Corti_0.2.0_aarch64.dmg"
   name "Corti"
   desc "Menu-bar app that auto-records meetings and files transcript notes to vagus"
   homepage "https://github.com/vasovagal/corti"
 
   # Apple Silicon only; support latest macOS + one back (ADR 0002). minimumSystemVersion is 15.0, so the
-  # per-major Homebrew gate ">= :sequoia" (15.x) lines up exactly with the bundle's LSMinimumSystemVersion
-  # (see the tap README / ADR 0006).
-  depends_on macos: ">= :sequoia"
+  # Homebrew gate :sequoia (a bare symbol means at-least, i.e. Sequoia 15.x or newer) lines up with the
+  # bundle's LSMinimumSystemVersion (see the tap README / ADR 0006). The older ">= :sequoia" string form is
+  # deprecated in current Homebrew.
+  depends_on macos: :sequoia
   depends_on arch: :arm64
 
   app "Corti.app"
