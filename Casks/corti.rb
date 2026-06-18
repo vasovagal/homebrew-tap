@@ -1,8 +1,8 @@
 cask "corti" do
-  version "0.6.0"
-  sha256 "fd610c1dd409a4ee8b76cf411c614e29f6e35102758ae17ddafd88b3a7cbc5ec"
+  version "0.7.0"
+  sha256 "e498edbbb1ab0a66ffcab531bdd68fe3eda2e1ea0838e18455d1d7f0370b8bc8"
 
-  url "https://github.com/vasovagal/corti/releases/download/v0.6.0/Corti_0.6.0_aarch64.dmg"
+  url "https://github.com/vasovagal/corti/releases/download/v0.7.0/Corti_0.7.0_aarch64.dmg"
   name "Corti"
   desc "Menu-bar app that auto-records meetings and files transcript notes to vagus"
   homepage "https://github.com/vasovagal/corti"
