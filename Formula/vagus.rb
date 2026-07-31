@@ -1,13 +1,13 @@
 class Vagus < Formula
   desc "Local-first PARA second brain: hybrid search over a Markdown vault"
   homepage "https://github.com/vasovagal/vagus"
-  version "0.10.0"
+  version "0.11.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/vasovagal/vagus/releases/download/v0.10.0/vagus-0.10.0-aarch64-apple-darwin.tar.gz"
-      sha256 "e316a847cfa2d54d609889f7921b9d1fd85736d184a1b31693202922ef3d5a3f"
+      url "https://github.com/vasovagal/vagus/releases/download/v0.11.0/vagus-0.11.0-aarch64-apple-darwin.tar.gz"
+      sha256 "955b91f66370a37ddc8176d32fd336d74ba74d7df4a6288ed4f227a2105b25f3"
     else
       odie "vagus ships only Apple Silicon (arm64) macOS bottles. Build from source: " \
            "cargo install --git https://github.com/vasovagal/vagus"
@@ -16,11 +16,11 @@ class Vagus < Formula
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/vasovagal/vagus/releases/download/v0.10.0/vagus-0.10.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "9e43e6a713cc269c0c7ba67b1c04df804af2412c35c0464417b40ff22af49d6e"
+      url "https://github.com/vasovagal/vagus/releases/download/v0.11.0/vagus-0.11.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "cb98567f7fb4612f432e211706195b7674958644a7c1bf16e903bad6703c54d0"
     else
-      url "https://github.com/vasovagal/vagus/releases/download/v0.10.0/vagus-0.10.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "428cbfa04d843b038c630fbead5ac3183f6f7ac7330742e3cabf34443348a6d0"
+      url "https://github.com/vasovagal/vagus/releases/download/v0.11.0/vagus-0.11.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "a25f680a21c56086261733e90f1ce4b9d41643d01cbe371b3e119bba098733ae"
     end
   end
 
