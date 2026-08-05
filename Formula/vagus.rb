@@ -1,7 +1,6 @@
 class Vagus < Formula
   desc "Local-first PARA second brain: hybrid search over a Markdown vault"
   homepage "https://github.com/vasovagal/vagus"
-  version "0.11.0"
   license "MIT"
 
   on_macos do
