@@ -1,6 +1,6 @@
 cask "corti" do
-  version "0.16.0"
-  sha256 "749ae7cbb3049da0f0a6df58e27f1cdd4351aac01d90a26c6819c045bab82667"
+  version "0.17.0"
+  sha256 "c99a0cb4e1617d8520128d8da6074bd37dec750b9b441c803dacf46d87d6482c"
 
   url "https://github.com/vasovagal/corti/releases/download/v#{version}/Corti_#{version}_aarch64.dmg"
   name "Corti"
