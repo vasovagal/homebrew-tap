@@ -19,10 +19,10 @@ cask "corti" do
   # UNSIGNED (ad-hoc) build: strip the quarantine xattr so Gatekeeper doesn't force the "Open Anyway" dance
   # on first launch. macOS still prompts for Microphone + System Audio Recording on first run — and again
   # after each update, because the ad-hoc cdhash changes every release (see ADR 0006).
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-r", "-d", "com.apple.quarantine", "#{appdir}/Corti.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-r", "-d", "com.apple.quarantine", "{{appdir}}/Corti.app"],
+        sudo: false
   end
 
   zap trash: [
