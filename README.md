@@ -17,8 +17,8 @@ brew install --cask corti    # corti menu-bar app (cask)
 
 ## corti is unsigned
 
-corti ships ad-hoc signed (no Apple Developer ID / notarization). The cask's `postflight` strips the
-quarantine attribute so Gatekeeper won't block first launch; macOS still prompts for **Microphone** and
+corti ships ad-hoc signed (no Apple Developer ID / notarization). The cask's `postflight_steps` stanza
+strips the quarantine attribute so Gatekeeper won't block first launch; macOS still prompts for **Microphone** and
 **System Audio Recording** on first run — and again after each update, since an ad-hoc build's code hash
 changes every release.
 
@@ -32,3 +32,6 @@ VERSION=X.Y.Z REPO=vasovagal/vagus  ../vagus/scripts/render-formula.sh > Formula
 # corti
 VERSION=X.Y.Z REPO=vasovagal/corti  ../corti/scripts/render-cask.sh    > Casks/corti.rb
 ```
+
+Until the upstream Corti renderer is migrated, update its generated hook to `postflight_steps` with
+`run` and the literal `{{appdir}}` token before committing, so regeneration does not restore the deprecation.
