@@ -1,6 +1,6 @@
 cask "corti" do
-  version "0.17.0"
-  sha256 "c99a0cb4e1617d8520128d8da6074bd37dec750b9b441c803dacf46d87d6482c"
+  version "0.18.0"
+  sha256 "fb1ff68b9132fbb90b4bb0a4385b7f2c074953b547a0c0103a3e9cb4bc15417e"
 
   url "https://github.com/vasovagal/corti/releases/download/v#{version}/Corti_#{version}_aarch64.dmg"
   name "Corti"
@@ -19,10 +19,10 @@ cask "corti" do
   # UNSIGNED (ad-hoc) build: strip the quarantine xattr so Gatekeeper doesn't force the "Open Anyway" dance
   # on first launch. macOS still prompts for Microphone + System Audio Recording on first run — and again
   # after each update, because the ad-hoc cdhash changes every release (see ADR 0006).
-  postflight_steps do
-    run "/usr/bin/xattr",
-        args: ["-r", "-d", "com.apple.quarantine", "{{appdir}}/Corti.app"],
-        sudo: false
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-r", "-d", "com.apple.quarantine", "#{appdir}/Corti.app"],
+                   sudo: false
   end
 
   zap trash: [
