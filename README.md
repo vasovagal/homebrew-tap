@@ -22,9 +22,10 @@ strips the quarantine attribute so Gatekeeper won't block first launch; macOS st
 **System Audio Recording** on first run — and again after each update, since an ad-hoc build's code hash
 changes every release.
 
-## Maintenance — manual, post-release (CI never writes here)
+## Maintenance
 
-After each upstream `vX.Y.Z` release, regenerate the relevant file from the published artifacts and commit:
+Corti's release workflow updates this tap automatically. To repair a failed publication or update
+Vagus, regenerate the relevant file from published artifacts and commit:
 
 ```sh
 # vagus
@@ -32,6 +33,3 @@ VERSION=X.Y.Z REPO=vasovagal/vagus  ../vagus/scripts/render-formula.sh > Formula
 # corti
 VERSION=X.Y.Z REPO=vasovagal/corti  ../corti/scripts/render-cask.sh    > Casks/corti.rb
 ```
-
-Until the upstream Corti renderer is migrated, update its generated hook to `postflight_steps` with
-`run` and the literal `{{appdir}}` token before committing, so regeneration does not restore the deprecation.
